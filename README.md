@@ -5,3 +5,5 @@
 2. Create your own branch, and name it after yourself
 3. Implement your BPS architecture using the starter code
 4. Make sure all of your changes are on your own branch (not master)
+
+A makefile is provided
