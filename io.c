@@ -32,19 +32,32 @@ void contactorInit(void){
 //feel free to make these more complex for testing purposes
 
 int currentRead(void){
-	return current++;
+	if (currentInitFlag){
+		return current++;
+	}else{
+		return -1000000;
+	}
 }
 
 int tempRead(void){
-	return temperature++;
+	if (tempInitFlag){
+		return temperature++;
+	}else{
+		return -1000000;
+	}
 }
 
 int voltRead(void){
-	return voltage++;
+	if (voltInitFlag){
+		return voltage++;
+	}else{
+		return -1000000;
+	}
+	
 }
 
 //function to control contactor
-//true is on, false is off
+//true is on (closed circuit), false is off (open circuit)
 void setContactor(bool state){
 	contactorState = state;
 	if (contactorState)
